@@ -1,10 +1,7 @@
 input[type="checkbox"] {
-  /* Add if not using autoprefixer */
   -webkit-appearance: none;
   appearance: none;
-  /* For iOS < 15 to remove gradient background */
   background-color: #fff;
-  /* Not removed via appearance */
   margin: 0;
 }
 
@@ -48,15 +45,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 #main {
   display: flex;
-  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
 }
 
 #secondary {
   display: none;
+}
+
+.kana-container {
+  position: absolute;
+  left: calc(50% - 100px);
 }
 
 .hiragana > h3, .katakana > h3 {
@@ -65,7 +69,6 @@ body {
   font-size: 30px;
   color: #5c6bc2;
   margin-right: 20px;
-  /* margin-left: 20px; */
 }
 
 .hiragana > input[type="checkbox"], .katakana > input[type="checkbox"] {
@@ -87,11 +90,9 @@ body {
   content: "";
   width: 0.65em;
   height: 0.65em;
-  /* margin-left */
   margin-top: 1px;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  /* box-shadow: inset 1em 1em black; */
   background-color: black;
 }
 
@@ -123,10 +124,6 @@ body {
   transform: translateY(2px);
 }
 
-/* form > button {
-  
-} */
-
 .container-start > form > div {
   display: flex;
   text-align: center;
@@ -135,14 +132,9 @@ body {
   font-size: larger;
 }
 
-
-
-/**/
-
 .container-test {
   position: absolute;
   top: 20vh;
-  /* left: 50vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,8 +206,6 @@ input {
   font-size: 18px;
   color: #3e4a91
 }
-
-
 
 .hidden {
   display: none !important;

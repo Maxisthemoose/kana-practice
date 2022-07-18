@@ -12,14 +12,9 @@ window.onload = (ev) => {
   stats.onclick = (e) => {
     e.preventDefault();
     const averagesElement = document.getElementById("averages");
-
     const classes = averagesElement.classList;
-
     if (classes.contains("hidden")) averagesElement.classList.remove("hidden");
     else averagesElement.classList.add("hidden");
-
-    // if (averagesElement.style.display === "none") averagesElement.style.display = "visible";
-    // else averagesElement.style.display = "none"; 
   }
 
   start.onclick = (e) => {
@@ -27,7 +22,6 @@ window.onload = (ev) => {
     const averagesEl = document.getElementById("averages");
     let hir = document.getElementById("hiragana").checked;
     let kat = document.getElementById("katakana").checked;
-    // const timed = document.getElementById("timed").checked;
 
     if (!hir && !kat) hir = true;
 
@@ -67,8 +61,6 @@ window.onload = (ev) => {
         
       }
       
-
-
       data.push({
         char: characterToUse.char,
         sound: characterToUse.sound,
@@ -113,15 +105,10 @@ window.onload = (ev) => {
         averagesEl.appendChild(characterAverage);
 
       }
-
-
       start = Date.now();
     }
-
   }
-
 }
-
 
 function calcAverages(data) {
   let returnMe = [];
@@ -131,22 +118,16 @@ function calcAverages(data) {
     const index = returnMe.findIndex(val => val.sound === v.sound);
     if (found) {
       const allOcc = data.filter(val => val.sound === v.sound);
-      // calc averages
       const totalTime = allOcc.reduce((pv, cv) => pv + cv.time, 0);
       const totalCorrect = allOcc.reduce((pv, cv) => pv + cv.correct, 0);
       const totalSeen = allOcc.length;
       console.log(totalSeen);
       const averageTime = totalTime / allOcc.length;
-
       returnMe.splice(index, 1, { char: v.char, sound: v.sound, correct: totalCorrect, time: averageTime, seen: totalSeen });
-
     } else returnMe.push(v);
   }
-
   return returnMe;
 }
-
-
 function randomCharacter(all) {
   return all[Math.floor(Math.random() * all.length)];
 }
