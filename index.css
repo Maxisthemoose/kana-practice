@@ -1,0 +1,222 @@
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+html {
+  height: 100%;
+  font-family: Gotham, Helvetica, Arial, sans-serif;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d2d8ff;
+}
+
+.stats-button {
+  position: absolute;
+  left: 20px;
+  top: 7px;
+  padding: 10px;
+  outline: none;
+  border: none;
+  color: #5c6bc2;
+  background-color: transparent;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.stats-button:active {
+  transform: translateY(2px)
+}
+
+.title {
+  text-align: center;
+  font-size: 40px;
+}
+
+.container-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main {
+  display: flex;
+  /* flex-direction: column; */
+}
+
+#secondary {
+  display: none;
+}
+
+.hiragana > h3, .katakana > h3 {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 30px;
+  color: #5c6bc2;
+  margin-right: 20px;
+  /* margin-left: 20px; */
+}
+
+.hiragana > input[type="checkbox"], .katakana > input[type="checkbox"] {
+  position: relative;
+  font: inherit;
+  color: transparent;
+  background-color: transparent;
+  width: 26px;
+  height: 26px;
+  border: 3px solid black;
+  border-radius: 0.15em;
+  margin-left: -40px;
+  margin-top: -60px;
+  display: grid;
+  place-content: center;
+}
+
+.hiragana > input[type="checkbox"]::before, .katakana > input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  /* margin-left */
+  margin-top: 1px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  /* box-shadow: inset 1em 1em black; */
+  background-color: black;
+}
+
+.hiragana > input[type="checkbox"]:checked::before, .katakana > input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+#main > form {
+  display: flex;
+  flex-direction: row;
+  overflow-wrap: normal;
+}
+
+#main > form > input[type=button] {
+  position: fixed;
+  font-size: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 50%;
+  left: calc(50% - 87px);
+  font-weight: bold;
+  color: #5c6bc2;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+#main > form > input[type=button]:active {
+  transform: translateY(2px);
+}
+
+/* form > button {
+  
+} */
+
+.container-start > form > div {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 20px;
+  font-size: larger;
+}
+
+
+
+/**/
+
+.container-test {
+  position: absolute;
+  top: 20vh;
+  /* left: 50vw; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#character {
+  margin: 0;
+  font-size: 150px;
+  font-weight: 500;
+  color: #5c6bc2;
+}
+
+.submit {
+  display: none;
+}
+
+input {
+  outline: none;
+}
+
+.input {
+  border-color: transparent;
+  height: 40px;
+  font-size: 30px;
+  text-align: center;
+  transition: 1s;
+}
+
+#averages {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90vw !important;
+}
+
+#averages > .average {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-color:#5c6bc2;
+  border-width: 3px;
+  border-style: solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+.character, .correct, .time {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.character {
+  font-size: 45px;
+  color: #5c6bc2;
+}
+
+.sound {
+  margin-top: 0;
+  margin-top: -10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.correct, .time {
+  font-size: 18px;
+  color: #3e4a91
+}
+
+
+
+.hidden {
+  display: none !important;
+}
