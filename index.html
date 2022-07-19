@@ -21,7 +21,8 @@
     <a class="me" href="https://github.com/Maxisthemoose">マックス</a>
   </div>
   <div class="container-start" id="main">
-    <h1 class="title">Hiragana + Katakana Recognition Test</h1>
+    <h1 class="title">ひらがな と カタカナ の 練習</h1>
+    <h1 class="title-eng" style="margin: 0;">HIRAGANA AND KATAKANA PRACTICE</h1>
     <form>
       <div class="kana-container">
         <div class="hiragana">
@@ -42,7 +43,10 @@
       <input type="text" class="input" autofocus="autofocus" maxlength="3" required="required">
       <input class="submit" type="submit">
     </form>
-    <h3 id="counter">0/0 Correct</h3>
+    <div id="counter">
+      <h3 id="counter-correct">0/0 correct (0%)</h3>
+      <h3 id="counter-incorrect">0/0 incorrect (0%)</h3>
+    </div>
     <div id="averages"></div>
   </div>
 </body>

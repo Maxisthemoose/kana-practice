@@ -13,21 +13,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #d2d8ff;
+  background-color: #bbc4ff;
 }
 .stats-button {
   position: absolute;
-  left: 20px;
-  top: 7px;
-  padding: 10px;
+  left: 10px;
+  top: 10px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   outline: none;
-  border: none;
-  color: #5c6bc2;
+  color: #4e5daf;
   background-color: transparent;
   font-size: large;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #525ea4;
 }
 .stats-button:active {
   transform: translateY(2px)
@@ -40,7 +44,7 @@ body {
   align-items: center;
 }
 .created-by {
-  color: #5c6bc2;
+  color: #5866b4;
   margin-right: 10px;
 }
 .me {
@@ -50,9 +54,21 @@ body {
 .title {
   text-align: center;
   font-size: 40px;
-  padding-top: 20px;
+  padding-top: 40px;
+  margin: 0;
   margin-left: 10px;
   margin-right: 10px;
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 30px;
+    margin-top: 35px;
+  }
+  
+}
+.title-eng {
+  font-size: 15px;
+  margin: 0;
 }
 .container-start {
   display: flex;
@@ -123,14 +139,14 @@ body {
   font-size: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: -20px;
-  top: 50%;
-  left: calc(50% - 87px);
+  margin-left: -45px;
   font-weight: bold;
-  color: #5c6bc2;
-  background-color: transparent;
+  color: #4e5daf;
+  background-color: #aab5ff;
   outline: none;
-  border: none;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #2c356a;
   cursor: pointer;
 }
 #main > form > div > input[type=button]:active {
@@ -170,7 +186,18 @@ input {
   height: 40px;
   font-size: 30px;
   text-align: center;
-  transition: 1s;
+  transition: 0.5s;
+}
+#counter {
+  display: flex;
+  flex-direction: row;
+}
+#counter-correct {
+  margin-right: 20px;
+  color: rgb(0, 88, 46);
+}
+#counter-incorrect {
+  color: rgb(141, 0, 19);
 }
 #averages {
   display: flex;
@@ -178,16 +205,22 @@ input {
   flex-wrap: wrap;
   width: 90vw !important;
 }
+#averages:first-child {
+  border-color: white;
+}
 #averages > .average {
   margin-right: 10px;
   margin-bottom: 10px;
-  border-color:#5c6bc2;
+  border-color:#7b88cf;
   border-width: 3px;
   border-style: solid;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+}
+#averages > .average:nth-child(even) {
+  border-color: #3d4da6;
 }
 .character, .correct, .time {
   margin-top: 5px;

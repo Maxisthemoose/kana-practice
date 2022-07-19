@@ -1,9 +1,11 @@
 let allCharacters = [];
+let startArray = [];
 let data = [];
 let characterToUse;
 
 let totalSeen = 0;
 let correct = 0;
+let wrong = 0;
 
 window.onload = (ev) => {
   const start = document.getElementById("start");
@@ -18,6 +20,7 @@ window.onload = (ev) => {
   }
 
   start.onclick = (e) => {
+
     e.preventDefault();
     const averagesEl = document.getElementById("averages");
     let hir = document.getElementById("hiragana").checked;
@@ -34,7 +37,11 @@ window.onload = (ev) => {
     if (hir) allCharacters = allCharacters.concat(hiragana);
     if (kat) allCharacters = allCharacters.concat(katakana);
 
-    characterToUse = randomCharacter(allCharacters);
+    startArray = startArray.concat(allCharacters);
+
+    characterToUse = startArray.length > 0 ?
+      getInitialCharacter() :
+      randomCharacter(allCharacters);
 
     character.innerText = characterToUse.char;
     let start = Date.now();
@@ -57,7 +64,7 @@ window.onload = (ev) => {
       if (!c) {
         inputOnClick.style.borderColor = "red";
         setTimeout(() => inputOnClick.style.borderColor = "transparent", 500);
-        
+        wrong++;
       }
       
       data.push({
@@ -69,8 +76,11 @@ window.onload = (ev) => {
       });
 
       inputOnClick.value = "";
-      document.getElementById("counter").innerText = `${correct}/${totalSeen} Correct`;
-      characterToUse = randomCharacter(allCharacters);
+      document.getElementById("counter-correct").innerText = `${correct}/${totalSeen} correct (${(correct/totalSeen*100).toPrecision(3)}%)`;
+      document.getElementById("counter-incorrect").innerText = `${wrong}/${totalSeen} incorrect (${(wrong/totalSeen*100).toPrecision(3)}%)`;
+      characterToUse = startArray.length > 0 ?
+        getInitialCharacter() :
+        randomCharacter(allCharacters);
       character.innerText = characterToUse.char;
 
       const averages = calcAverages(data);
@@ -128,4 +138,9 @@ function calcAverages(data) {
 }
 function randomCharacter(all) {
   return all[Math.floor(Math.random() * all.length)];
+}
+
+function getInitialCharacter() {
+  const ran = Math.floor(Math.random() * startArray.length);
+  return startArray.splice(ran, 1)[0];
 }
