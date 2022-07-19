@@ -4,20 +4,17 @@ input[type="checkbox"] {
   background-color: #fff;
   margin: 0;
 }
-
 html {
   height: 100%;
   font-family: Gotham, Helvetica, Arial, sans-serif;
   user-select: none;
 }
-
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #d2d8ff;
 }
-
 .stats-button {
   position: absolute;
   left: 20px;
@@ -35,7 +32,6 @@ body {
 .stats-button:active {
   transform: translateY(2px)
 }
-
 .createdBy {
   position: absolute;
   right: 20px;
@@ -47,12 +43,10 @@ body {
   color: #5c6bc2;
   margin-right: 10px;
 }
-
 .me {
   font-weight: bold;
   color: black;
 }
-
 .title {
   text-align: center;
   font-size: 40px;
@@ -60,7 +54,6 @@ body {
   margin-left: 10px;
   margin-right: 10px;
 }
-
 .container-start {
   display: flex;
   flex-direction: column;
@@ -68,30 +61,33 @@ body {
   justify-content: center;
   color: #2c356a;
 }
-
 #main {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 #secondary {
   display: none;
 }
-
 .kana-container {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   left: calc(50% - 100px);
+  top: 28%;
 }
-
+.hiragana, .katakana {
+  margin-bottom: 100px;
+}
 .hiragana > h3, .katakana > h3 {
-  margin-top: 70px;
+  margin: 0;
   text-align: center;
   font-size: 30px;
   color: #5c6bc2;
   margin-right: 20px;
 }
-
 .hiragana > input[type="checkbox"], .katakana > input[type="checkbox"] {
   position: relative;
   font: inherit;
@@ -102,11 +98,10 @@ body {
   border: 3px solid black;
   border-radius: 0.15em;
   margin-left: -40px;
-  margin-top: -60px;
+  margin-top: -30px;
   display: grid;
   place-content: center;
 }
-
 .hiragana > input[type="checkbox"]::before, .katakana > input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
@@ -116,22 +111,19 @@ body {
   transition: 120ms transform ease-in-out;
   background-color: black;
 }
-
 .hiragana > input[type="checkbox"]:checked::before, .katakana > input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
-
 #main > form {
   display: flex;
   flex-direction: row;
   overflow-wrap: normal;
 }
-
-#main > form > input[type=button] {
-  position: fixed;
+#main > form > div > input[type=button] {
   font-size: 40px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-left: -20px;
   top: 50%;
   left: calc(50% - 87px);
   font-weight: bold;
@@ -141,10 +133,9 @@ body {
   border: none;
   cursor: pointer;
 }
-#main > form > input[type=button]:active {
+#main > form > div > input[type=button]:active {
   transform: translateY(2px);
 }
-
 .container-start > form > div {
   display: flex;
   text-align: center;
@@ -152,7 +143,6 @@ body {
   margin: 20px;
   font-size: larger;
 }
-
 .container-test {
   position: absolute;
   top: 20vh;
@@ -163,22 +153,18 @@ body {
   justify-content: center;
   text-align: center;
 }
-
 #character {
   margin: 0;
   font-size: 150px;
   font-weight: 500;
   color: #5c6bc2;
 }
-
 .submit {
   display: none;
 }
-
 input {
   outline: none;
 }
-
 .input {
   border-color: transparent;
   height: 40px;
@@ -186,14 +172,12 @@ input {
   text-align: center;
   transition: 1s;
 }
-
 #averages {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 90vw !important;
 }
-
 #averages > .average {
   margin-right: 10px;
   margin-bottom: 10px;
@@ -205,29 +189,24 @@ input {
   padding-bottom: 10px;
   border-radius: 10px;
 }
-
 .character, .correct, .time {
   margin-top: 5px;
   margin-bottom: 0;
 }
-
 .character {
   font-size: 45px;
   color: #5c6bc2;
 }
-
 .sound {
   margin-top: 0;
   margin-top: -10px;
   font-size: 17px;
   font-weight: 500;
 }
-
 .correct, .time {
   font-size: 18px;
   color: #3e4a91
 }
-
 .hidden {
   display: none !important;
 }
