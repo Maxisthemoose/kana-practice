@@ -104,7 +104,7 @@ window.onload = (ev) => {
 
         const averageTime = document.createElement("h3");
         averageTime.className = `${val.sound} time`;
-        averageTime.innerText = `Average Time: ${val.time / 1000} seconds`;
+        averageTime.innerText = `Average Time: ${(val.time / 1000).toPrecision(3)} seconds`;
 
         characterAverage.appendChild(kanaCharacter);
         characterAverage.appendChild(sound);
