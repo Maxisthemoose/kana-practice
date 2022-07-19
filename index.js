@@ -14,9 +14,15 @@ window.onload = (ev) => {
   stats.onclick = (e) => {
     e.preventDefault();
     const averagesElement = document.getElementById("averages");
+    const button = document.getElementById("stats");
     const classes = averagesElement.classList;
-    if (classes.contains("hidden")) averagesElement.classList.remove("hidden");
-    else averagesElement.classList.add("hidden");
+    if (classes.contains("hidden")) {
+      averagesElement.classList.remove("hidden");
+      button.innerText = "HIDE STATS";
+    } else {
+      averagesElement.classList.add("hidden");
+      button.innerText = "VIEW STATS";
+    }
   }
 
   start.onclick = (e) => {
