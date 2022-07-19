@@ -46,7 +46,6 @@ window.onload = (ev) => {
     sub.onclick = (ev) => {
       averagesEl.classList.add("hidden");
       const inputOnClick = document.getElementsByClassName("input")[0];
-      console.log(inputOnClick);
       totalSeen++;
       let end = Date.now();
       ev.preventDefault();
@@ -121,7 +120,6 @@ function calcAverages(data) {
       const totalTime = allOcc.reduce((pv, cv) => pv + cv.time, 0);
       const totalCorrect = allOcc.reduce((pv, cv) => pv + cv.correct, 0);
       const totalSeen = allOcc.length;
-      console.log(totalSeen);
       const averageTime = totalTime / allOcc.length;
       returnMe.splice(index, 1, { char: v.char, sound: v.sound, correct: totalCorrect, time: averageTime, seen: totalSeen });
     } else returnMe.push(v);
