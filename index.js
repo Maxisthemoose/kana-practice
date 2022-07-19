@@ -126,7 +126,7 @@ function calcAverages(data) {
       returnMe.splice(index, 1, { char: v.char, sound: v.sound, correct: totalCorrect, time: averageTime, seen: totalSeen });
     } else returnMe.push(v);
   }
-  return returnMe;
+  return returnMe.sort((a, b) => (a.correct / a.seen) < (b.correct / b.seen));
 }
 function randomCharacter(all) {
   return all[Math.floor(Math.random() * all.length)];
